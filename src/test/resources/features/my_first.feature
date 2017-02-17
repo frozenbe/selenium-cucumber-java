@@ -1,11 +1,10 @@
-Feature: Gmail Login
-        As a user I should able to login into Gmail.
+Feature: Wikipedia search
+        As a non logged in user I should be able to do search on Wikipedia.
  
- Scenario: I login with valid credential
-        Given I navigate to "http://www.gmail.com"
-        And I enter "test@gmail.com" into input field having id "Email"
-        Then I click on element having id "next"
-        And I enter "123456" into input field having id "Passwd"
-        When I click on element having id "signIn"
-        And I wait for 15 sec
+ Scenario: I select a language
+        Given I navigate to "https://www.wikipedia.org/"
+        And I select "he" option by value from dropdown having id "searchLanguage"
+        When I enter "בדיקת תוכנה אוטומטית" into input field having id "searchInput"
+        And I click on element having class "pure-button-primary-progressive"
+        When I wait for 5 sec
         Then I close browser
