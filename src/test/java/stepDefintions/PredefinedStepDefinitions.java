@@ -418,7 +418,19 @@ public class PredefinedStepDefinitions implements BaseTest
 		//miscmethodObj.validateOptionBy(optionBy);
 		inputObj.selectOptionFromRadioButtonGroup(type, option, by, accessName);
 	}
-	
+
+	// Drag and Drop Steps
+
+		// Drag element1 into element2
+		@Then("^I drag an element having (.+) \"(.*?)\" to element having (.+) \"(.*?)\"$")
+		public void dragAndDropElements(String type,String accessName, String type2,String accessName2) throws Exception
+		{
+			miscmethodObj.validateLocator(type);
+			miscmethodObj.validateLocator(type2);
+			dragAndDropObj.dragFromElementToElement(type, accessName, type2, accessName2);
+
+		}
+
 	//Click element Steps 
 	
 		// click on web element
